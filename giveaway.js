@@ -27,7 +27,7 @@ const deadline = document.querySelector('.deadline');
 const items = document.querySelectorAll('.deadline-format h4');
 
 
-let futureDate = new Date(2022,1,20,10,50,0);
+let futureDate = new Date(2022,1,21,10,50,0);
 
 const year = futureDate.getFullYear();
 const hours = futureDate.getHours(); 
@@ -81,7 +81,7 @@ function getRemainingTime(){
     });
     if(t < 0) {
         clearInterval(countdown);
-        deadline.innerHTML = `<h4 class="Expired">sorry, link has Expired</h4>`;  
+        deadline.innerHTML = `<h3 class="Expired">sorry, link has Expired</h3>`;  
     }
 }
 // countdown
