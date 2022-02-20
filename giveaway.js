@@ -48,7 +48,7 @@ const futureTime = futureDate.getTime();
 
 function getRemainingTime(){
     const today = new Date().getTime();
-    const t = futureTime - today;
+    const time = futureTime - today;
     // 1s = 1000ms
     // 1m = 60s
     // 1hr = 60mins
@@ -59,11 +59,11 @@ function getRemainingTime(){
     const oneHour = 60 * 60 * 1000;
     const oneMinute = 60 * 1000;
 
-    let days = t / oneDay;
+    let days = time / oneDay;
     days = Math.floor(days)
-    let hours = Math.floor((t % oneDay) / oneHour);
-    let minutes = Math.floor((t % oneHour) / oneMinute);
-    let seconds = Math.floor((t % oneMinute) / 1000);
+    let hours = Math.floor((time % oneDay) / oneHour);
+    let minutes = Math.floor((time % oneHour) / oneMinute);
+    let seconds = Math.floor((time % oneMinute) / 1000);
 
     // set values array
     const values = [days,hours,minutes,seconds];
@@ -78,7 +78,7 @@ function getRemainingTime(){
     items.forEach(function(item, index) {
         item.innerHTML = format(values[index]);
     });
-    if(t < 0) {
+    if(time < 0) {
         clearInterval(countdown);
         deadline.innerHTML = `<h3 class="Expired">sorry, link has Expired</h3>`;  
     }

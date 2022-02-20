@@ -73,6 +73,11 @@ a {
 .gift-info h4 {
   color: #1f1f1f;
 }
+.gift-info .source {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
 .deadline {
   display: flex;
   justify-content: space-between;
